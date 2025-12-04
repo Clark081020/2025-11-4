@@ -119,3 +119,12 @@ proba_df = pd.DataFrame({
 }).sort_values('Class')
 
 st.bar_chart(proba_df.set_index('Class'))
+import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+
+# koreanize_matplotlib 대신 사용할 코드
+# 폰트 파일을 프로젝트 폴더에 저장했다고 가정
+fontpath = 'NanumGothic.ttf' 
+font_name = fm.FontProperties(fname=fontpath, size=10).get_name()
+plt.rc('font', family=font_name)
+plt.rcParams['axes.unicode_minus'] = False # 마이너스 기호 깨짐 방지
